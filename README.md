@@ -1,2 +1,5 @@
 # Sales-Engineer-Test
-Sales Engineer technical test.
+
+For the test I used Postman to built the payment flow.
+
+
