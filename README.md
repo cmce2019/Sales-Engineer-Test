@@ -2,6 +2,7 @@
 
 For the test I used Postman to built all the payment flow. In the next part of this document, we can se all points of the test. Also we can found the .json file, where is the source code of the queries built previously. 
 
+- test Account ID: 57e6e025-bff0-4e63-9071-677f43d63a4d
 
 
 ## Payment flow:
