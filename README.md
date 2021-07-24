@@ -44,4 +44,4 @@ x-client-user-agent:123
 
 ## Technical definitions:
 
-## Conclusions:
+## Conclusion:
