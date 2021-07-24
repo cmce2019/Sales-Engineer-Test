@@ -21,7 +21,22 @@ For the test I used Postman to built all the payment flow. In the next part of t
 - api-version:1.3.0
 - x-payments-os-env:{{x-payments-os-env}}
 - x-client-user-agent:123
-
+- Body:
+```
+{
+  "token_type": "credit_card",
+  "credit_card_cvv": "123",
+  "card_number": "4111111111111111",
+  "expiration_date": "10/29",
+  "holder_name": "John Mark",
+  "billing_address": {
+    "country": "USA",
+    "state": "NY",
+    "city": "NYC",
+    "line1": "fifth avenue 10th"
+  }
+}
+```
 
 ### 2. 
 
