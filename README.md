@@ -127,10 +127,11 @@ x-payments-os-env:{{x-payments-os-env}}
 idempotency_key:{{$randomInt}}
 ```
 ## Technical definitions:
-- Tokenization:
-- Authorize:
-- Capture:
-- Charge:
-- Void:
-- Refound:
+- Tokenization: This represents the Payment Method selected by the customer to pay
+- Authorize: An Authorization represents a hold on funds in the customer's account. This is the first half of the two-step payment flow.
+- Capture: This is the second half of the two-step payment flow. For a full capture, leave the amount empty.
+- Charge: A Charge is a one-step payment flow that transfers funds from the customer's account.
+- Void: A void cancels an operation before it has been finalized.
+- Refound: A refund allows you to cancel or undo a sale and return the charged amount to the customer.
 ## Conclusion:
+I think that it was a interesant exercise, I had some troubles with the payment authorization, but I would like that exists more examples in the use of the API 
