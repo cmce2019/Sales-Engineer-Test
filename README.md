@@ -5,7 +5,7 @@ For the test I used Postman to built all the payment flow. In the next part of t
 
 
 ## Payment flow:
-All steps uses http POST verb.
+in all steps I used POST HTTP verb
 ### Global variables:
 - app_id: com.test.test_alfa-bank
 - private_key: c02fbcf5-211c-43a1-901b-4a3428caace4
@@ -127,5 +127,10 @@ x-payments-os-env:{{x-payments-os-env}}
 idempotency_key:{{$randomInt}}
 ```
 ## Technical definitions:
-
+- Tokenization:
+- Authorize:
+- Capture:
+- Charge:
+- Void:
+- Refound:
 ## Conclusion:
