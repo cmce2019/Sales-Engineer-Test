@@ -40,7 +40,49 @@ x-client-user-agent:123
 }
 ```
 
-### 2. 
+### 2. Create Payment 
+- Link: https://api.paymentsos.com/payments
+- Headers:
+```
+app_id:{{app_id}}
+private_key:{{private_key}}
+Content-Type:application/json
+api-version:1.3.0
+x-payments-os-env:{{x-payments-os-env}}
+```
+- Body:
+```
+{
+  "amount": 5000,
+  "currency": "USD",
+  "order": {
+    "id": "myorderid"
+  }
+} 
+```
+### 3. Create Authorization
+- Link: https://api.paymentsos.com/payments
+- Headers:
+```
+app_id:{{app_id}}
+private_key:{{private_key}}
+Content-Type:application/json
+api-version:1.3.0
+x-payments-os-env:test
+idempotency_key:asd
+x-client-user-agent:123
+```
+- Body:
+```
+{
+    "payment_method": {
+        "credit_card_cvv": "123",
+        "token": {{token}},
+        "type": "tokenized"
+    },
+    "reconciliation_id": "40762342"
+}
+```
 
 ## Technical definitions:
 
