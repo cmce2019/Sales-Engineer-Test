@@ -5,6 +5,7 @@ For the test I used Postman to built all the payment flow. In the next part of t
 
 
 ## Payment flow:
+All steps uses http POST verb.
 ### Global variables:
 - app_id: com.test.test_alfa-bank
 - private_key: c02fbcf5-211c-43a1-901b-4a3428caace4
@@ -61,7 +62,7 @@ x-payments-os-env:{{x-payments-os-env}}
 } 
 ```
 ### 3. Create Authorization
-- Link: https://api.paymentsos.com/payments
+- Link: https://api.paymentsos.com/payments/{{paymentid}}/authorizations
 - Headers:
 ```
 app_id:{{app_id}}
@@ -83,7 +84,48 @@ x-client-user-agent:123
     "reconciliation_id": "40762342"
 }
 ```
-
+### 4. Create capture:
+- Link: https://api.paymentsos.com/payments/{{paymentid}}/captures
+- Headers:
+```
+app_id:{{app_id}}
+private_key:{{private_key}}
+Content-Type:application/json
+api-version:1.3.0
+x-payments-os-env:{{x-payments-os-env}}
+idempotency_key:{{$randomInt}}
+```
+### 5. Create charge:
+- Link: https://api.paymentsos.com/payments/{{paymentid}}/charges
+- Headers:
+```
+app_id:{{app_id}}
+private_key:{{private_key}}
+Content-Type:application/json
+api-version:1.3.0
+x-payments-os-env:{{x-payments-os-env}}
+idempotency_key:{{$randomInt}}
+```
+- Body: 
+```
+{
+  "payment_method": {
+    "type": "tokenized",
+    "token": "{{token}}"
+  }
+}
+```
+### 6. Create refound:
+- Link: https://api.paymentsos.com/payments/{{paymentid}}/refunds
+- Headers:
+```
+app_id:{{app_id}}
+private_key:{{private_key}}
+Content-Type:application/json
+api-version:1.3.0
+x-payments-os-env:{{x-payments-os-env}}
+idempotency_key:{{$randomInt}}
+```
 ## Technical definitions:
 
 ## Conclusion:
