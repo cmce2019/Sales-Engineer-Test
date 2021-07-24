@@ -4,7 +4,7 @@ For the test I used Postman to built all the payment flow. In the next part of t
 
 
 ## Payment flow:
-###Global variables:
+### Global variables:
 1. Create a token:
 Link: https://api.paymentsos.com/tokens
 Headers:
